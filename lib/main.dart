@@ -1,4 +1,5 @@
-import 'package:catalog/home_screen.dart';
+import 'package:catalog/screens/home_screen.dart';
+import 'package:catalog/screens/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +12,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Catalog App',
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      // home: HomeScreen(),
+      themeMode: ThemeMode.dark,
+      // theme: ThemeData(primarySwatch: Colors.purpleAccent),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      routes: {
+        "/": (context) => HomeScreen(),
+        "/home": (context) => HomeScreen(),
+        "/login": (context) => LoginPage()
+      },
     );
   }
 }

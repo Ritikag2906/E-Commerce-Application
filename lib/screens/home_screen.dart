@@ -11,7 +11,8 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          child: Text('Welcome to $days day of Flutter!'),
+          child: Text('Welcome to $days days of Flutter!'),
+          // color: Colors.white,
         ),
       ),
       drawer: Drawer(),
