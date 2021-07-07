@@ -13,8 +13,6 @@ class HomeScreen extends StatelessWidget {
         child: Container(
           child: Text(
             'Welcome to $days days of Flutter!',
-            style: TextStyle(
-                fontSize: 30, color: Colors.blue, fontWeight: FontWeight.bold),
           ),
         ),
       ),
