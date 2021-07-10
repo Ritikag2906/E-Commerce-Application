@@ -1,6 +1,7 @@
 import 'package:catalog/screens/home_screen.dart';
 import 'package:catalog/screens/login_page.dart';
 import 'package:catalog/utils/routes.dart';
+import 'package:catalog/widgets/themes.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
@@ -13,17 +14,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Catalog App',
-      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-          fontFamily: GoogleFonts.lato().fontFamily,
-          primaryTextTheme: GoogleFonts.lateefTextTheme()),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
+      theme: Mytheme.lightTheme(context),
+      darkTheme: Mytheme.darkTheme(context),
+      debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.loginRoute,
       routes: {
-        "/": (context) => LoginPage(),
+        "/": (context) => HomeScreen(),
         MyRoutes.homeRoute: (context) => HomeScreen(),
         MyRoutes.loginRoute: (context) => LoginPage()
       },

@@ -7,7 +7,7 @@ class MyDrawer extends StatelessWidget {
     final imageUrl = "https://beegee.in/ritika1.jpg";
     return Drawer(
       child: Container(
-        color: Colors.blue,
+        color: Colors.deepPurple,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -19,9 +19,10 @@ class MyDrawer extends StatelessWidget {
                   accountName: Text(
                     "Ritika Gupta",
                     style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
+                      fontSize: 25,
+                      color: Colors.white,
+                      // fontWeight: FontWeight.bold
+                    ),
                   ),
                   accountEmail: Text("ritikagupta@gmail.com,",
                       style: TextStyle(
