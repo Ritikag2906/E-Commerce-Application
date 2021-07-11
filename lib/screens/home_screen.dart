@@ -1,4 +1,6 @@
+import 'package:catalog/models/catalog.dart';
 import 'package:catalog/widgets/drawer.dart';
+import 'package:catalog/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -7,25 +9,23 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // elevation: 0.0,
-        // backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
-
         shadowColor: Colors.black,
         title: Text(
           "Catalog App",
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 25.0,
+            color: Colors.black,
+            fontSize: 18.0,
           ),
         ),
       ),
-      body: Center(
-        child: Container(
-          child: Text(
-            'Welcome to $days days of Flutter!',
-          ),
-        ),
+      body: ListView.builder(
+        itemCount: CatalogModel.items.length,
+        itemBuilder: (context, Index) {
+          return ItemWidget(
+            item: CatalogModel.items[Index],
+          );
+        },
       ),
       drawer: MyDrawer(),
     );
