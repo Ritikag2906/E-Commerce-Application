@@ -1,0 +1,43 @@
+{
+    "products": [
+        {
+      "id": 1,
+      "name": "iPhone 12",
+      "desc": "Apple iPhone 12th generation",
+      "price": 999,
+      "color": "#33505a",
+      "image":
+          "https://images-na.ssl-images-amazon.com/images/I/71hIfcIPyxS._SX466_.jpg"
+        },
+
+        {
+            "id": 2,
+            "name": "MacBook Air",
+            "desc": "Apple MacBook",
+            "price": 999,
+            "color": "#33505a",
+            "image":
+                "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-air-gold-select-201810?wid=1078&hei=624&fmt=jpeg&qlt=80&.v=1603332211000"
+              },
+
+              {
+                "id": 3,
+                "name": "iPhone 11 Pro",
+                "desc": "Apple iPhone 11th generation",
+                "price": 999,
+                "color": "#33505a",
+                "image":
+                    "https://images-na.ssl-images-amazon.com/images/I/61VK5q8L-oL._SL1024_.jpg"
+                  },
+
+                  {
+                    "id": 4,
+                    "name": "iPad Pro",
+                    "desc": "Apple iPad Pro 2020 32.76 cm",
+                    "price": 999,
+                    "color": "#33505a",
+                    "image":
+                        "https://www.reliancedigital.in/medias/iPad-Pro-12-9-WIFI-512-GB-SG-2020-MXAV2HN-A-Tablets-491691552-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NjQyNXxpbWFnZS9qcGVnfGltYWdlcy9oMGIvaGFkLzkyNzA3Mjc3MzczNzQuanBnfGU1MzU0YTA0NDQ0NWRlMjc5YTZkZDJkYzgyMzYyMTVhNDgzODc1MGMzYjU5OTUyYjZjMmMyOThhOTQ5ODM1OWI"
+                  }
+    ]
+}

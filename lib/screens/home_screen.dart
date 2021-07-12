@@ -7,6 +7,7 @@ class HomeScreen extends StatelessWidget {
   int days = 30;
   @override
   Widget build(BuildContext context) {
+    final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
@@ -19,13 +20,16 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView.builder(
-        itemCount: CatalogModel.items.length,
-        itemBuilder: (context, Index) {
-          return ItemWidget(
-            item: CatalogModel.items[Index],
-          );
-        },
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: dummyList.length,
+          itemBuilder: (context, Index) {
+            return ItemWidget(
+              item: dummyList[Index],
+            );
+          },
+        ),
       ),
       drawer: MyDrawer(),
     );
