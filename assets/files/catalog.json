@@ -15,7 +15,7 @@
             "name": "MacBook Air",
             "desc": "Apple MacBook",
             "price": 999,
-            "color": "#33505a",
+            "color": "#00ac51",
             "image":
                 "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-air-gold-select-201810?wid=1078&hei=624&fmt=jpeg&qlt=80&.v=1603332211000"
               },
@@ -33,6 +33,16 @@
                   {
                     "id": 4,
                     "name": "iPad Pro",
+                    "desc": "Apple iPad Air 4th Gen 27.68 cm (10.9 inch)",
+                    "price": 999,
+                    "color": "#33505a",
+                    "image":
+                        "https://www.reliancedigital.in/medias/Apple-MYFQ2HN-A-Tablets-491901110-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wyMDA0MTF8aW1hZ2UvanBlZ3xpbWFnZXMvaDYyL2g3OC85MzgzOTc4MzY5MDU0LmpwZ3xlZmYzZWE0NjAwNjNmMTIzMWFhMjQ4OTgyOWY0ZjA4ZjNjMTBmZmMxMGVkNzg4NzBkZGRmZjUzYjEzMGI5ZWNi"
+                  },
+
+                  {
+                    "id": 5,
+                    "name": "iPad Air",
                     "desc": "Apple iPad Pro 2020 32.76 cm",
                     "price": 999,
                     "color": "#33505a",
