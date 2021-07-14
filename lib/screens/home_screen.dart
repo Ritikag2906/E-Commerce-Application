@@ -49,13 +49,25 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-              ? ListView.builder(
-                  itemCount: CatalogModel.items.length,
+              ? GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 16,
+                    crossAxisSpacing: 16,
+                  ),
                   itemBuilder: (context, index) {
-                    return ItemWidget(
-                      item: CatalogModel.items[index],
-                    );
+                    final item = CatalogModel.items[index];
+                    return Card(
+                        clipBehavior: Clip.antiAlias,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        child: GridTile(
+                          child: Image.network(item.image),
+                          header: Text(item.name),
+                          footer: Text(item.price.toString()),
+                        ));
                   },
+                  itemCount: CatalogModel.items.length,
                 )
               : Center(
                   child: CircularProgressIndicator(),
