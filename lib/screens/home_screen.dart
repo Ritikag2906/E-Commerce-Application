@@ -62,10 +62,25 @@ class _HomeScreenState extends State<HomeScreen> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         child: GridTile(
-                          child: Image.network(item.image),
-                          header: Text(item.name),
-                          footer: Text(item.price.toString()),
-                        ));
+                            child: Image.network(item.image),
+                            header: Container(
+                                child: Text(
+                                  item.name,
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: const EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  color: Colors.deepPurple,
+                                )),
+                            footer: Container(
+                                child: Text(
+                                  item.price.toString(),
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: const EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                ))));
                   },
                   itemCount: CatalogModel.items.length,
                 )
