@@ -35,17 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     // final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
-        shadowColor: Colors.black,
-        title: Text(
-          "Catalog App",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 18.0,
-          ),
-        ),
-      ),
       body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
