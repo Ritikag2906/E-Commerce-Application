@@ -1,11 +1,9 @@
-import 'dart:html';
-
 import 'package:catalog/models/catalog.dart';
 import 'package:catalog/widgets/themes.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
-import 'package:catalog/widgets/drawer.dart';
-import 'package:catalog/widgets/item_widget.dart';
+// import 'package:catalog/widgets/drawer.dart';
+// import 'package:catalog/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -40,22 +38,25 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     // final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
     return Scaffold(
+        backgroundColor: Mytheme.creamColor,
         body: SafeArea(
-      child: Container(
-          padding: Vx.m32,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CatalogHeader(),
-              if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-                CatalogList()
-              else
-                Center(
-                  child: CircularProgressIndicator(),
-                )
-            ],
-          )),
-    ));
+          child: Container(
+              // height: MediaQuery.of(context).size.height * 0.9,
+              padding: Vx.m32,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CatalogHeader(),
+                  if (CatalogModel.items != null &&
+                      CatalogModel.items.isNotEmpty)
+                    CatalogList().expand()
+                  else
+                    Center(
+                      child: CircularProgressIndicator(),
+                    )
+                ],
+              )),
+        ));
   }
 }
 
@@ -75,6 +76,7 @@ class CatalogList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      shrinkWrap: true,
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
         final catalog = CatalogModel.items[index];
@@ -93,6 +95,35 @@ class CatalogItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return VxBox().white.square(100).make();
+    return VxBox(
+        child: Row(
+      children: [
+        CatalogImage(
+          image: catalog.image,
+        ),
+        Expanded(
+          child: Column(
+            children: [catalog.name.text.make()],
+          ),
+        )
+      ],
+    )).white.roundedLg.square(150).make().py16();
+  }
+}
+
+class CatalogImage extends StatelessWidget {
+  final String image;
+
+  const CatalogImage({Key key, @required this.image}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Image.network(image)
+        .box
+        .rounded
+        .p8
+        .color(Mytheme.creamColor)
+        .make()
+        .p16()
+        .w40(context);
   }
 }
