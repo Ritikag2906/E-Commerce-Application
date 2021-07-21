@@ -1,4 +1,5 @@
 import 'package:catalog/models/catalog.dart';
+import 'package:catalog/widgets/home_widgets/add_to_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:catalog/widgets/themes.dart';
@@ -14,22 +15,17 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.transparent),
-      backgroundColor: Mytheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${catalog.price}".text.bold.xl4.red800.make(),
-            ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Mytheme.darkBluishColor),
-                        shape: MaterialStateProperty.all(StadiumBorder())),
-                    child: "Add to cart".text.xl.make())
-                .wh(140, 50)
+            AddToCart(
+              catalog: catalog,
+            ).wh(140, 50)
           ],
         ).p32(),
       ),
@@ -48,12 +44,12 @@ class HomeDetailPage extends StatelessWidget {
               edge: VxEdge.TOP,
               arcType: VxArcType.CONVEY,
               child: Container(
-                color: Colors.white,
+                color: context.cardColor,
                 width: context.screenWidth,
                 child: Column(
                   children: [
                     catalog.name.text.xl4
-                        .color(Mytheme.darkBluishColor)
+                        .color(context.accentColor)
                         .bold
                         .make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),

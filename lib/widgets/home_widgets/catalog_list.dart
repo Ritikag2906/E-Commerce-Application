@@ -1,9 +1,11 @@
+import 'package:catalog/models/cart.dart';
 import 'package:catalog/models/catalog.dart';
 import 'package:catalog/screens/home_detail_page.dart';
-import 'package:catalog/widgets/themes.dart';
+//  import 'package:catalog/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import 'add_to_cart.dart';
 import 'catalog_image.dart';
 
 // import '../home_screen.dart';
@@ -50,29 +52,29 @@ class CatalogItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              catalog.name.text.lg.color(Mytheme.darkBluishColor).bold.make(),
-              catalog.desc.text.textStyle(context.captionStyle).make(),
+              catalog.name.text.lg.color(context.theme.accentColor).bold.make(),
+              catalog.desc.text
+                  .textStyle(context.captionStyle)
+                  // .color(MyTheme.darkBluishColor)
+                  .make(),
               10.heightBox,
               ButtonBar(
                 alignment: MainAxisAlignment.spaceBetween,
                 buttonPadding: EdgeInsets.zero,
                 children: [
-                  "\$${catalog.price}".text.bold.xl.make(),
-                  ElevatedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                  Mytheme.darkBluishColor),
-                              shape:
-                                  MaterialStateProperty.all(StadiumBorder())),
-                          child: "Add to cart".text.make())
-                      .wh(105, 40)
+                  "\$${catalog.price}"
+                      .text
+                      // .color(MyTheme.darkBluishColor)
+                      .bold
+                      .xl
+                      .make(),
+                  AddToCart(catalog: catalog)
                 ],
               ).pOnly(right: 8.0)
             ],
           ),
         )
       ],
-    )).white.roundedLg.square(150).make().py16();
+    )).color(context.cardColor).roundedLg.square(150).make().py16();
   }
 }
