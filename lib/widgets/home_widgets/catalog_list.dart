@@ -70,7 +70,7 @@ class CatalogItem extends StatelessWidget {
                       .make(),
                   AddToCart(catalog: catalog)
                 ],
-              ).pOnly(right: 8.0)
+              ).pOnly(right: 9.0)
             ],
           ),
         )
